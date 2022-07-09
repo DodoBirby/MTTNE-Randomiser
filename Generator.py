@@ -25,6 +25,10 @@ class Generator:
         self.itemDict[label] = item
         self.items.add(item)
 
+    def write_gear(self, label, item):
+        label = int(label, 0x10)
+        self.itemDict[label] = item
+
     def no_logic_generate(self):
         print("Objective Complete: Filling rest of items")
         missiles = self.missiles
@@ -42,7 +46,8 @@ class Generator:
                 if missiles > 0:
                     missiles -= 1
                     while not success:
-                        rand = random.choice(keylist)
+                        rand = random.randint(0, len(keylist)-1)
+                        rand = keylist[rand]
                         if self.itemDict[rand] == 0:
                             self.itemDict[rand] = 0x1f
                             success = True
@@ -50,7 +55,8 @@ class Generator:
                 if supers > 0:
                     supers -= 1
                     while not success:
-                        rand = random.choice(keylist)
+                        rand = random.randint(0, len(keylist)-1)
+                        rand = keylist[rand]
                         if self.itemDict[rand] == 0:
                             self.itemDict[rand] = 0x20
                             success = True
@@ -58,7 +64,8 @@ class Generator:
                 if shields > 0:
                     shields -= 1
                     while not success:
-                        rand = random.choice(keylist)
+                        rand = random.randint(0, len(keylist)-1)
+                        rand = keylist[rand]
                         if self.itemDict[rand] == 0:
                             self.itemDict[rand] = 0x21
                             success = True
@@ -66,7 +73,8 @@ class Generator:
                 if energy > 0:
                     energy -= 1
                     while not success:
-                        rand = random.choice(keylist)
+                        rand = random.randint(0, len(keylist)-1)
+                        rand = keylist[rand]
                         if self.itemDict[rand] == 0:
                             self.itemDict[rand] = 0x1e
                             success = True
@@ -74,7 +82,8 @@ class Generator:
                 if powbombs > 0:
                     powbombs -= 1
                     while not success:
-                        rand = random.choice(keylist)
+                        rand = random.randint(0, len(keylist)-1)
+                        rand = keylist[rand]
                         if self.itemDict[rand] == 0:
                             self.itemDict[rand] = 0x22
                             success = True
@@ -82,11 +91,13 @@ class Generator:
         #Generate Majors
         
         while len(majorsLeft) > 0:
-            major = random.choice(majorsLeft)
+            major = random.randint(0, len(majorsLeft)-1)
+            major = majorsLeft[major]
             success = False
             majorsLeft.remove(major)
             while not success:
-                rand = random.choice(keylist)
+                rand = random.randint(0, len(keylist)-1)
+                rand = keylist[rand]
                 if self.itemDict[rand] == 0:
                     self.itemDict[rand] = major
                     success = True
@@ -110,7 +121,8 @@ class Generator:
 
     def place_early_morph(self):
         morph_locations = ["38b", "c44"]
-        rand = random.choice(morph_locations)
+        rand = random.randint(0, len(morph_locations)-1)
+        rand = morph_locations[rand]
         self.itemDict[int(rand, 0x10)] = 0x10
         self.items.add(0x10)
         return rand
@@ -152,16 +164,20 @@ class Generator:
         randomitempool.remove(0x10)
         while generating:
             lr.calc_accessible_locations(self.items)
-            rand = random.choice(randomitempool)
+            rand = random.randint(0, len(randomitempool)-1)
+            rand = randomitempool[rand]
             if rand == 0x24:
                 if len(lr.accessible_locations) >= 5:
                     if lr.evaluate_requirements("astescape", self.items):
                         randomitempool = [x for x in randomitempool if x != 0x24]
                         for i in range(5):
                             lr.calc_accessible_locations(self.items)
-                            loc = random.choice(tuple(lr.accessible_locations))
+                            print(lr.accessible_locations)
+                            loc = random.randint(0, len(lr.accessible_locations)-1)
+                            loc = lr.accessible_locations[loc]
                             lr.delete_item_loc(loc)
-                            self.write_item(loc, 0x24)
+                            self.write_gear(loc, 0x24)
+                        self.items.add(0x24)
                 continue
                         
             if lr.is_progression(self.items, set([rand])):
@@ -172,7 +188,8 @@ class Generator:
                 if not minor:
                     self.majorsLeft.remove(rand)
                 lr.calc_placeable_locations(self.items, set([rand]))
-                loc = random.choice(tuple(lr.accessible_locations))
+                loc = random.randint(0, len(lr.accessible_locations)-1)
+                loc = lr.accessible_locations[loc]
                 lr.delete_item_loc(loc)
                 self.write_item(loc, rand)
             elif tries > 2000:

@@ -3,7 +3,7 @@ class LogicReader:
     def __init__(self):
         self.definitions = set([])
         self.requirements = {}
-        self.accessible_locations = set([])
+        self.accessible_locations = []
 
     def get_requirements(self, filepath):
         with open(filepath, "r") as f:
@@ -57,10 +57,10 @@ class LogicReader:
         return [loc for loc in self.requirements.keys() if not loc in self.definitions]
 
     def calc_accessible_locations(self, items, currentItem=set([])):
-        self.accessible_locations = set([])
+        self.accessible_locations = []
         for loc in self.get_locations():
             if self.evaluate_requirements(loc, items, currentItem):
-                self.accessible_locations.add(loc)
+                self.accessible_locations.append(loc)
 
     def is_progression(self, items, item):
         self.old_accessible = self.accessible_locations
