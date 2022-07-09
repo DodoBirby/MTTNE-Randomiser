@@ -1,0 +1,231 @@
+#This is the randomiser logic file, don't touch unless you know what you're doing
+#A capital E indicates item is required to escape the check area
+#A * means no requirements
+#Major Items
+.def varia 02
+.def gravity 03
+.def phazon 04
+.def long 05
+.def charge 06
+.def spazer 07
+.def fire 08
+.def wave 09
+.def plasma 0a
+.def ice 0b
+.def wall 0c
+.def speed 0d
+.def high 0e
+.def space 0f
+.def morph 10
+.def morphbombs morph&11
+.def spring morph&12
+.def spider morph&13
+.def grip 14
+.def screw 15
+.def blast 18&super
+.def adaptor 1a&powbomb
+#Minor Items
+.def etank 1e
+.def missile 1f
+.def super 20
+.def shield 21
+.def powbomb morph&22
+.def anybomb morphbombs|powbomb
+.def gears 24
+#Groups of items
+.def anymissile super|missile
+.def astescape space|spider|anymissile&speed|anymissile&high&grip|anymissile&wall|anymissile&morphbombs
+.def metlock5 green&anymissile&morphbombs|green&anymissile&space|green&anymissile&spider
+.def metlock10 green&anymissile&morphbombs|green&anymissile&space|green&anymissile&spider
+.def metlock15 darkgreen&anymissile
+.def metlock25 darkgreen&screw&space&anymissile
+#Planets
+.def asteroid *
+.def aqua astescape
+.def steel astescape
+.def incen astescape&gears
+.def green astescape&gears
+.def gravitax astescape&gears&gravity
+.def khold astescape&gears&varia&speed&fire&super
+
+#Goal
+.def endgame space&screw&morphbombs&powbomb&blast&fire&speed&phazon
+
+#Regions
+.def upperast space|spider|anymissile|speed|morphbombs
+.def lowerast anymissile|morphbombs|long&morph
+.def darkaqua aqua&speed&phazon&powbomb
+.def darkincen incen&speed&phazon&gravity&varia
+.def darkgreen green&phazon&space|green&phazon&morphbombs|green&phazon&spider|green&phazon&speed
+.def darkkhold khold&phazon&wave&fire&space|khold&phazon&adaptor&fire&space|khold&phazon&wave&fire&spider|khold&phazon&adaptor&fire&spider
+#Locations
+
+#Asteroid
+13f astescape & morphbombs
+257 upperast&anymissile&spider|upperast&anymissile&wall
+25e upperast&anymissile
+38b Emorph|Ewall|Egrip|Ehigh|Espace
+480 upperast&wall|spider|space|morphbombs|speed
+5bb lowerast
+6b7 upperast&morph
+6cc lowerast&wall|lowerast&high&grip|lowerast&space|lowerast&spider
+7b3 astescape
+8cb astescape&screw&fire
+9ff anymissile
+a0d lowerast&space|lowerast&spider
+c3d morphbombs
+c44 *
+f7e anymissile&Ewall|anymissile&Ehigh|anymissile&Espider|anymissile&Espace|anymissile&Emorphbombs
+10c0 blast&phazon&powbomb
+
+#Aquadia
+1199 aqua&anymissile
+11a7 aqua&anybomb
+12b1 aqua
+12c6 aqua&wall&morph|aqua&spider|aqua&morphbombs|aqua&gravity&space
+13c2 aqua&wall&morph|aqua&spider|aqua&morphbombs|aqua&space&morph
+150b darkaqua
+15f2 aqua&wall&morph|aqua&spider|aqua&morphbombs|aqua&space&morph
+1615 aqua&anybomb
+1750 darkaqua&Eice
+1830 aqua&super
+1837 aqua&space|aqua&spider|aqua&morphbombs
+1948 aqua&super
+1a60 aqua
+1b86 aqua&anybomb
+1c82 darkaqua
+1c97 aqua&anybomb&space|aqua&anybomb&spider
+1d9a darkaqua
+1dbd darkaqua&space
+1dc4 darkaqua&space
+210c darkaqua
+21fa darkaqua&space|darkaqua&morphbombs
+220f darkaqua
+
+#Steelaris
+2772 steel&anymissile
+2780 steel&spider&super|steel&space&super|steel&morphbombs&super
+2787 steel&super
+278e steel&powbomb
+29b7 steel
+29be steel&super
+2cf8 steel&adaptor&fire
+2cff steel&wall|steel&spider|steel&morphbombs
+2e17 steel&anybomb
+2f2f steel&morphbombs
+3032 steel&anybomb
+304e steel&speed&super&anybomb
+314a steel&anymissile&powbomb
+3158 steel
+315f steel&anybomb
+3166 steel&super&anybomb
+3262 steel&anybomb&anymissile
+3381 steel
+35aa steel&anybomb&anymissile
+35b1 steel&powbomb&anymissile
+35bf steel&space|steel&spider|steel&morphbombs
+36d0 steel&screw&space
+37e8 steel&screw&space
+
+#Incendian
+33b9 darkincen
+35e2 darkincen
+3701 darkincen
+380b incen&fire
+3915 darkincen&super
+3b22 incen&anybomb&anymissile
+3c3a incen&anymissile
+3c79 darkincen
+3d6e incen
+3e94 incen&gravity&anymissile&speed
+3f97 incen&space|incen&spider
+3fb3 incen&gravity&varia
+41c7 incen&powbomb
+450f incen&super
+4620 incen&speed
+462e incen&powbomb
+463c incen&fire
+4731 incen&fire&space|incen&fire&wall&spider
+475b incen&gravity&fire
+4865 incen&Espeed|incen&Efire
+4a9c incen&gravity&super&fire
+4aa3 incen&gravity&fire
+
+#Greenymede
+624 metlock10&speed
+73c metlock10&speed
+cb4 green&speed&spider&anybomb|green&speed&space&anybomb
+cbb green&super|green&speed&spider&anybomb|green&speed&space&anybomb
+db0 green&space&powbomb|green&speed&powbomb|green&spider&powbomb
+ef9 metlock5&speed
+ff5 green
+1011 metlock5
+1130 green&speed
+122c green&speed&metlock5|green&powbomb
+1344 green&morphbombs|green&space|green&high|green&spider
+1416 metlock25
+153c darkgreen&screw
+1582 green&powbomb
+1597 darkgreen&screw&space
+164d darkgreen&speed&space
+1765 darkgreen
+177a darkgreen&speed
+179d darkgreen&screw&metlock15
+17c0 green&speed
+18b5 darkgreen&metlock15
+18c3 green&anybomb
+18ca green&space&super|green&spider&super
+19db green&metlock5
+19fe darkgreen&speed&spider&screw|darkgreen&speed&space&screw
+1c12 darkgreen&screw&anybomb
+1c3c darkgreen&screw
+1d07 darkgreen&anymissile
+1d1c darkgreen&metlock15&Escrew&speed|darkgreen&screw
+1d38 green&metlock5&super
+
+#Gravitax
+3525 gravitax&phazon&space|gravitax&phazon&morphbombs
+3970 gravitax&space|gravitax&morphbombs|gravitax&spider|gravitax&speed
+3985 gravitax&powbomb
+3a9d gravitax
+3bb5 gravitax&speed
+3bca gravitax&phazon&speed
+3cd4 gravitax&powbomb
+3cdb gravitax
+3dde gravitax
+3df3 gravitax&powbomb
+4007 gravitax&powbomb&space|gravitax&powbomb&spider|gravitax&powbomb&morphbombs
+4134 gravitax&phazon&Espace
+4483 gravitax&phazon&space
+
+#Kholdstar
+1e11 darkkhold&adaptor&fire
+1e18 darkkhold&Eadaptor
+1f1b darkkhold&powbomb
+1f4c khold
+1f6f khold
+2079 khold
+224e darkkhold&space
+22be khold&gravity
+23b3 khold
+24d9 khold
+24ee khold&gravity
+25ea khold&powbomb
+260d khold
+2836 khold
+2924 khold
+2940 khold&gravity&space|khold&spider
+2a4a khold
+2a5f khold
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import filedialog as fd
-import Randomiser
+from Generator import Generator
 import Patcher
 root = Tk()
 root.title("MTTNE Randomiser")
@@ -15,6 +15,8 @@ class itemError(Error):
 
 class fileError(Error):
     pass
+
+gen = Generator()
 
 def selectFile(arg):
     filetypes = (('Data files', '*.dat'), ('All files', '*.*'))
@@ -43,10 +45,11 @@ def generateGame():
         powerBombs = int(PBEntry.get())
         magShields = int(ShieldEntry.get())
         eTanks = int(ETankEntry.get())
-        if missiles + supers + powerBombs + magShields + eTanks > 110:
+        if missiles + supers + powerBombs + magShields + eTanks > 114:
             raise itemError
-        itemDict = Randomiser.randomiser(seed, missiles, powerBombs, supers, magShields, eTanks)
+        itemDict = gen.generate_game(seed, missiles, supers, eTanks, powerBombs, magShields)
         Patcher.patch(infile, outfile, itemDict)
+        print("Done!")
     except ValueError:
         pass
     except itemError:
@@ -64,7 +67,7 @@ def updateItems():
         count = missiles + supers + powerBombs + magShields + eTanks
     except ValueError:
         count = "N/A"
-    Itemcount.config(text=str(count) + "/110")
+    Itemcount.config(text=str(count) + "/114")
     root.after(100, updateItems)
 
 
@@ -84,7 +87,7 @@ ETankLabel = Label(root, text="E-Tanks:",fg="white",bg="#1e1e1e")
 Itemcount = Label(root, text="0/110", fg="white", bg="#1e1e1e")
 
 MissEntry = Entry(root)
-MissEntry.insert(0, "46")
+MissEntry.insert(0, "50")
 SupEntry = Entry(root)
 SupEntry.insert(0, "20")
 PBEntry = Entry(root)

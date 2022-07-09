@@ -1,0 +1,11 @@
+#Start the line with # to denote a comment
+
+#.def indicates a name definition
+.def morph 10
+
+#morph can now be used in place of 10
+.def bombs 11
+
+#These lines are equivalent
+.def morphbombs 10&11
+.def morphbombs morph&bombs
