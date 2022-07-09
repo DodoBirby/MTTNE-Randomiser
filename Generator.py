@@ -181,7 +181,6 @@ class Generator:
                         randomitempool = [x for x in randomitempool if x != 0x24]
                         for i in range(5):
                             lr.calc_accessible_locations(self.items)
-                            print(lr.accessible_locations)
                             loc = random.randint(0, len(lr.accessible_locations)-1)
                             loc = lr.accessible_locations[loc]
                             lr.delete_item_loc(loc)
