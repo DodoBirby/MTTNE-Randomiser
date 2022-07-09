@@ -157,6 +157,15 @@ class Generator:
         lr.get_requirements(path)
         self.majorsLeft = [*range(0x02, 0x1b)]
         randomitempool = [*range(0x02, 0x1b), 0x1f, 0x20, 0x21, 0x22, 0x24, 0x24, 0x24, 0x24]
+        if self.missiles == 0:
+            randomitempool.remove(0x1f)
+        if self.shields == 0:
+            randomitempool.remove(0x21)
+        #Seed is impossible without supers or powerbombs but the customer is always right...
+        if self.supers == 0:
+            randomitempool.remove(0x20)
+        if self.powbombs == 0:
+            randomitempool.remove(0x22)
         generating = True
         loc = self.place_early_morph()
         lr.delete_item_loc(loc)
