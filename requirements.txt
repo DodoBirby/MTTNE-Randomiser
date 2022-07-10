@@ -1,4 +1,3 @@
-#This is the randomiser logic file, don't touch unless you know what you're doing
 #A capital E indicates item is required to escape the check area
 #A * means no requirements
 #Major Items
@@ -87,7 +86,7 @@ f7e anymissile&Ewall|anymissile&Ehigh|anymissile&Espider|anymissile&Espace|anymi
 150b darkaqua
 15f2 aqua&wall&morph|aqua&spider|aqua&morphbombs|aqua&space&morph
 1615 aqua&anybomb
-1750 darkaqua&Eice
+1750 darkaqua&Eice&fire
 1830 aqua&super
 1837 aqua&space|aqua&spider|aqua&morphbombs
 1948 aqua&super
@@ -153,7 +152,7 @@ f7e anymissile&Ewall|anymissile&Ehigh|anymissile&Espider|anymissile&Espace|anymi
 
 #Greenymede
 624 metlock10&speed
-73c metlock10&speed
+73c metlock10&speed&fire
 cb4 green&speed&spider&anybomb|green&speed&space&anybomb
 cbb green&super|green&speed&spider&anybomb|green&speed&space&anybomb
 db0 green&space&powbomb|green&speed&powbomb|green&spider&powbomb
@@ -189,7 +188,7 @@ ff5 green
 3985 gravitax&powbomb
 3a9d gravitax
 3bb5 gravitax&speed
-3bca gravitax&phazon&speed
+3bca gravitax&phazon&speed&screw
 3cd4 gravitax&powbomb
 3cdb gravitax
 3dde gravitax
