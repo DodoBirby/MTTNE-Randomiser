@@ -96,7 +96,8 @@ a0d lowerast&morph&crumble
 1c82 aqua&speed&chargehole
 
 #Middle Aquadia
-.def midaqua keyaqua|aqua&super
+.def midaquaescape Ewall&Emorph|Espider|Emorphbombs
+.def midaqua keyaqua|midaquaescape&aqua&super
 160e midaqua
 1615 midaqua&anybomb&Ewall|midaqua&anybomb&Espider|midaqua&anybomb&Egrip|midaqua&anybomb&Egravity&Espace
 1830 midaqua
