@@ -5,8 +5,6 @@ import Patcher
 import os
 class RandomFiller:
     def __init__(self, seed):
-        if seed == "":
-            seed = random.randint(0, 999999999)
         random.seed(seed)
         self.generation_progress = 0
 
@@ -164,6 +162,8 @@ class RandomFiller:
 
 def randomise(seed, missiles, supers, powbombs, shields, energy):
     global itemd
+    if seed == "":
+            seed = random.randint(0, 999999999)
     itemd = ItemDictMaker()
     filler = RandomFiller(seed)
     filler.gear_locations = filler.get_gear_locations(missiles, supers, powbombs, shields, energy)
