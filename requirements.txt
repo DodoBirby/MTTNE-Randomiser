@@ -1,3 +1,4 @@
+#This is the randomiser logic file, don't touch unless you know what you're doing
 #A capital E indicates item is required to escape the check area
 #A * means no requirements
 #Major Items
@@ -22,7 +23,7 @@
 .def grip 14
 .def screw 15
 .def blast 18&super
-.def adaptor 1a&powbomb
+.def adaptor 1a&powbomb&fire
 #Minor Items
 .def etank 1e
 .def missile 1f
@@ -30,194 +31,277 @@
 .def shield 21
 .def powbomb morph&22
 .def anybomb morphbombs|powbomb
-.def gears 24
+.def gear 24
 #Groups of items
 .def anymissile super|missile
 .def astescape space|spider|anymissile&speed|anymissile&high&grip|anymissile&wall|anymissile&morphbombs
-.def metlock5 green&anymissile&morphbombs|green&anymissile&space|green&anymissile&spider
-.def metlock10 green&anymissile&morphbombs|green&anymissile&space|green&anymissile&spider
-.def metlock15 darkgreen&anymissile
-.def metlock25 darkgreen&screw&space&anymissile
+.def climb space|spider|morphbombs
+.def crumble space|spider
+.def flight space|morphbombs
+
 #Planets
 .def asteroid *
-.def aqua astescape
-.def steel astescape
-.def incen astescape&gears
-.def green astescape&gears
-.def gravitax astescape&gears&gravity
-.def khold astescape&gears&varia&speed&fire&super
 
 #Goal
-.def endgame space&screw&morphbombs&powbomb&blast&fire&speed&phazon
+.def endgame space&screw&morphbombs&powbomb&blast&fire&speed&phazon|space&screw&morphbombs&powbomb&blast&fire&speed&N6 1e
 
-#Regions
-.def upperast space|spider|anymissile|speed|morphbombs
-.def lowerast anymissile|morphbombs|long&morph
-.def darkaqua aqua&speed&phazon&powbomb
-.def darkincen incen&speed&phazon&gravity&varia
-.def darkgreen green&phazon&space|green&phazon&morphbombs|green&phazon&spider|green&phazon&speed
-.def darkkhold khold&phazon&wave&fire&space|khold&phazon&adaptor&fire&space|khold&phazon&wave&fire&spider|khold&phazon&adaptor&fire&spider
 #Locations
 
 #Asteroid
-13f astescape & morphbombs
-257 upperast&anymissile&spider|upperast&anymissile&wall
+#Outer Asteroid
+.def outerast astescape
+13f outerast&anybomb
+7b3 outerast
+8cb outerast&screw&fire
+
+#Upper Asteroid
+.def upperast space|spider|speed|morphbombs|anymissile
+
+257 upperast&anymissile&climb
 25e upperast&anymissile
-38b Emorph|Ewall|Egrip|Ehigh|Espace
-480 upperast&wall|spider|space|morphbombs|speed
-5bb lowerast
+480 upperast&climb|upperast&speed
 6b7 upperast&morph
-6cc lowerast&wall|lowerast&high&grip|lowerast&space|lowerast&spider
-7b3 astescape
-8cb astescape&screw&fire
-9ff anymissile
-a0d lowerast&space|lowerast&spider
-c3d morphbombs
+
+#Startzone, no requirements
+38b Emorph|Ewall|Ehigh|Egrip|Espace
 c44 *
-f7e anymissile&Ewall|anymissile&Ehigh|anymissile&Espider|anymissile&Espace|anymissile&Emorphbombs
-10c0 blast&phazon&powbomb
+c3d anybomb
+f7e anymissile&Ewall|anymissile&Ehigh|anymissile&Eclimb
+9ff anymissile
+
+#Lower Asteroid
+.def lowerast morph&long&Eanymissile|morph&anymissile|anybomb&Eanymissile|anymissile
+
+a0d lowerast&morph&crumble
+6cc lowerast&climb|lowerast&high&grip|lowerast&speed
+5bb lowerast
+
+#Dark Asteroid
+.def darkast N6 1e&powbomb|phazon&powbomb
+10c0 darkast&blast&morph|darkast&screw&flight&speed&ice&Eblast
+
 
 #Aquadia
-1199 aqua&anymissile
+.def aqua astescape
+
+#Charge hole
+.def chargehole aqua&climb&morph|aqua&wall&morph
+13c2 chargehole
+15f2 chargehole
+
+#Nokey, no reqs
 11a7 aqua&anybomb
-12b1 aqua
-12c6 aqua&wall&morph|aqua&spider|aqua&morphbombs|aqua&gravity&space
-13c2 aqua&wall&morph|aqua&spider|aqua&morphbombs|aqua&space&morph
-150b darkaqua
-15f2 aqua&wall&morph|aqua&spider|aqua&morphbombs|aqua&space&morph
-1615 aqua&anybomb
-1750 darkaqua&Eice&fire
-1830 aqua&super
-1837 aqua&space|aqua&spider|aqua&morphbombs
-1948 aqua&super
-1a60 aqua
-1b86 aqua&anybomb
-1c82 darkaqua
-1c97 aqua&anybomb&space|aqua&anybomb&spider
-1d9a darkaqua
-1dbd darkaqua&space
-1dc4 darkaqua&space
-210c darkaqua
-21fa darkaqua&space|darkaqua&morphbombs
-220f darkaqua
+12b8 aqua
+12bf aqua
+1c82 aqua&speed&chargehole
+
+#Middle Aquadia
+.def midaqua keyaqua|aqua&super
+160e midaqua
+1615 midaqua&anybomb&Ewall|midaqua&anybomb&Espider|midaqua&anybomb&Egrip|midaqua&anybomb&Egravity&Espace
+1830 midaqua
+1948 midaqua&anymissile
+1837 midaqua&climb
+183e midaqua&morph
+1a60 midaqua&wall&morph|midaqua&climb
+1b7f midaqua&anymissile&anybomb
+
+#Big Aqua
+.def bigaqua keyaqua&Ewall|keyaqua&Espace&Egravity|keyaqua&Eclimb
+1b86 bigaqua
+1ece bigaqua&adaptor&morphbombs|bigaqua&wave&fire&morphbombs
+1fd8 bigaqua&flight
+20f0 bigaqua&anymissile&fire
+1c97 bigaqua&climb&anybomb
+
+#Dark Aquadia
+.def darkaquahell aqua&N6 1e|aqua&phazon
+.def darkaqua darkaquahell&chargehole&speed&powbomb|darkaquahell&Nb 23
+1d9a darkaqua&chargehole&speed&powbomb|darkaqua&flight&anybomb
+21fa darkaqua&flight
+268b darkaqua&powbomb&flight&Nb 23
+220f darkaqua&Eclimb|Nb 23&gravity&speed&Eclimb
+1dbd darkaqua&flight&Nb 23
+1dc4 darkaqua&flight&Nb 23&powbomb&speed
+1ef1 darkaqua&Nb 23&powbomb
+210c darkaqua&Nb 23&speed
+2113 darkaqua&Nb 23&fire
+150b darkaqua&Nb 23&powbomb&Eclimb
+1750 darkaqua&fire&speed&Eice
+
+#Light Aquadia Key
+.def keyaqua aqua&Nb 23
+1199 keyaqua&anymissile
+12b1 keyaqua
+12c6 keyaqua&wall&morph&anymissile|keyaqua&gravity&space&anymissile|keyaqua&spider&anymissile|keyaqua&morphbombs&anymissile
 
 #Steelaris
-2772 steel&anymissile
-2780 steel&spider&super|steel&space&super|steel&morphbombs&super
+.def steel astescape
+#Basic Steel
+2772 steel&wall&morph|steel&climb
+2780 steel&climb&super
 2787 steel&super
-278e steel&powbomb
+278e steel&powbomb&Eclimb&Esuper
 29b7 steel
-29be steel&super
-2cf8 steel&adaptor&fire
-2cff steel&wall|steel&spider|steel&morphbombs
+29be steel&super&climb|steel&super&high|steel&super&grip
+2cf8 steel&adaptor&climb
+2cff steel&climb
 2e17 steel&anybomb
-2f2f steel&morphbombs
-3032 steel&anybomb
-304e steel&speed&super&anybomb
-314a steel&anymissile&powbomb
-3158 steel
-315f steel&anybomb
-3166 steel&super&anybomb
-3262 steel&anybomb&anymissile
-3381 steel
-35aa steel&anybomb&anymissile
-35b1 steel&powbomb&anymissile
-35bf steel&space|steel&spider|steel&morphbombs
-36d0 steel&screw&space
-37e8 steel&screw&space
+2f2f uprightsteel&morphbombs|steel&super&N2 22
+304e steel&speed&super&shield&anybomb
+
+#Upper Right Steel
+.def uprightsteel steel&anybomb|steel&anymissile
+3032 uprightsteel&Eanybomb
+314a uprightsteel&N3 22|uprightsteel&morphbombs&powbomb
+3158 uprightsteel&climb|uprightsteel&grip|uprightsteel&wall|uprightsteel&high
+3262 uprightsteel&climb&anybomb|uprightsteel&wall&anybomb
+3381 uprightsteel&climb|uprightsteel&grip|uprightsteel&wall|uprightsteel&high
+35aa uprightsteel&climb&anybomb
+35b1 uprightsteel&powbomb
+
+#Lower Right Steel
+.def lowrightsteel steel&anybomb
+315f lowrightsteel&climb|lowrightsteel&wall
+3166 lowrightsteel&morph&super
+
+#Dark Steel
+.def darksteel lowrightsteel&N1 1e|lowrightsteel&phazon
+35bf darksteel&climb|darksteel&morph&wall
+36d0 darksteel&space&screw
+37e8 darksteel&space&screw&super
 
 #Incendian
+.def incen astescape&N5 24&N6 1e&anymissile|astescape&N5 24&varia&anymissile
+
+#Main Incendian
+450f incen&super
+462e incen&powbomb
+4865 incen&Efire|incen&Espeed
+4620 incen&speed&fire&anybomb
+41c7 incen&climb&powbomb
+3f97 incen&climb
+3fb3 incen&gravity&Eclimb&super
+3e94 incen&gravity&anymissile&speed
+3d6e incen&climb
+3b22 incen&anybomb&climb
+3c3a incen&climb
+380b incen&fire&Eclimb|incen&fire&Ehigh|incen&fire&Ewall&Emorph
+
+#Post Fire Incendian
+.def postfire incen&fire
+4731 postfire&climb&shield&N2 22|postfire&climb&flight&N2 22|postfire&climb&shield&powbomb&morphbombs|postfire&climb&flight&powbomb&morphbombs
+463c postfire&climb&morph
+475b postfire&gravity|postfire&N5 21
+4a9c postfire&gravity&N2 22&climb
+4aa3 postfire&gravity
+
+#Dark Incendian
+.def darkincen incen&speed&fire&gravity&phazon&N6 21&climb
 33b9 darkincen
 35e2 darkincen
 3701 darkincen
-380b incen&fire
-3915 darkincen&super
-3b22 incen&anybomb&anymissile
-3c3a incen&anymissile
 3c79 darkincen
-3d6e incen
-3e94 incen&gravity&anymissile&speed
-3f97 incen&space|incen&spider
-3fb3 incen&gravity&varia
-41c7 incen&powbomb
-450f incen&super
-4620 incen&speed
-462e incen&powbomb
-463c incen&fire
-4731 incen&fire&space|incen&fire&wall&spider
-475b incen&gravity&fire
-4865 incen&Espeed|incen&Efire
-4a9c incen&gravity&super&fire
-4aa3 incen&gravity&fire
-
-#Greenymede
-624 metlock10&speed
-73c metlock10&speed&fire
-cb4 green&speed&spider&anybomb|green&speed&space&anybomb
-cbb green&super|green&speed&spider&anybomb|green&speed&space&anybomb
-db0 green&space&powbomb|green&speed&powbomb|green&spider&powbomb
-ef9 metlock5&speed
-ff5 green
-1011 metlock5
-1130 green&speed
-122c green&speed&metlock5|green&powbomb
-1344 green&morphbombs|green&space|green&high|green&spider
-1416 metlock25
-153c darkgreen&screw
-1582 green&powbomb
-1597 darkgreen&screw&space
-164d darkgreen&speed&space
-1765 darkgreen
-177a darkgreen&speed
-179d darkgreen&screw&metlock15
-17c0 green&speed
-18b5 darkgreen&metlock15
-18c3 green&anybomb
-18ca green&space&super|green&spider&super
-19db green&metlock5
-19fe darkgreen&speed&spider&screw|darkgreen&speed&space&screw
-1c12 darkgreen&screw&anybomb
-1c3c darkgreen&screw
-1d07 darkgreen&anymissile
-1d1c darkgreen&metlock15&Escrew&speed|darkgreen&screw
-1d38 green&metlock5&super
+3915 darkincen&super&powbomb
 
 #Gravitax
-3525 gravitax&phazon&space|gravitax&phazon&morphbombs
-3970 gravitax&space|gravitax&morphbombs|gravitax&spider|gravitax&speed
+.def gravitax astescape&N5 24&gravity
+3970 gravitax&climb&anybomb&anymissile|gravitax&speed&anybomb&anymissile
 3985 gravitax&powbomb
 3a9d gravitax
 3bb5 gravitax&speed
-3bca gravitax&phazon&speed&screw
-3cd4 gravitax&powbomb
-3cdb gravitax
+3cd4 gravitax&powbomb|gravitax&wave
+3cdb gravitax&powbomb|gravitax&wave
 3dde gravitax
 3df3 gravitax&powbomb
-4007 gravitax&powbomb&space|gravitax&powbomb&spider|gravitax&powbomb&morphbombs
-4134 gravitax&phazon&Espace
-4483 gravitax&phazon&space
+4007 gravitax&powbomb&climb
+
+#Dark Gravitax
+.def darkgravhell gravitax&Nb 1e|gravitax&phazon
+.def darkgravleft darkgravhell&climb
+.def darkgravright darkgravhell&powbomb&speed
+3525 darkgravleft&flight
+3bca darkgravright&screw
+4134 darkgravleft&darkgravright&N8 20
+4483 darkgravleft&darkgravright&N8 20
 
 #Kholdstar
-1e11 darkkhold&adaptor&fire
-1e18 darkkhold&Eadaptor
-1f1b darkkhold&powbomb
-1f4c khold
-1f6f khold
-2079 khold
-224e darkkhold&space
-22be khold&gravity
-23b3 khold
-24d9 khold
-24ee khold&gravity
-25ea khold&powbomb
-260d khold
-2836 khold
+.def khold astescape&N5 24&N8 1e&super&speed&fire&shield|astescape&N5 24&varia&super&speed&fire&shield
+#Main Khold
 2924 khold
-2940 khold&gravity&space|khold&spider
-2a4a khold
-2a5f khold
+23b3 khold
+1f4c khold
+2079 khold
+25ea khold&powbomb
+24d9 khold
+2940 khold&climb
+2a4a khold&climb
+2a5f khold&Eclimb
+260d khold&super&Eclimb
+1f6f khold&super
 
+#Underwater Khold
+.def underkhold khold&gravity
+24ee underkhold
+2836 underkhold
+22be underkhold
 
+#Dark Khold
+.def darkkholdhell khold&N8 1e|khold&phazon
+.def darkkhold darkkholdhell&adaptor&climb|darkkholdhell&wave&fire&climb
+1e11 darkkhold&adaptor
+1e18 darkkhold&Eadaptor
+224e darkkhold&flight&super
+
+#Greenymede
+.def green astescape&N5 24
+.def metlock5 green&climb&anymissile
+.def metlock10 green&climb&anymissile
+.def metlock15 upperdarkgreen&anymissile
+.def metlock25 lowerdarkgreen&space&anymissile
+#Main Greenymede
+db0 green&climb&powbomb
+ef9 metlock5&speed
+ff5 green
+1011 metlock5&Eclimb|metlock5&Espeed
+122c green&speed|green&powbomb
+1344 green&climb
+1582 green&powbomb&climb
+
+#Bottom Right Light
+.def botrightgreen green&Eclimb
+1130 botrightgreen&speed&shield
+17c0 botrightgreen&speed
+18ca botrightgreen&crumble&super
+18c3 botrightgreen&anybomb
+19db botrightgreen&climb
+1d38 botrightgreen&super
+
+#Left Greenymede
+.def leftgreen green&speed
+73c leftgreen&metlock10&fire
+624 leftgreen&metlock10&climb
+cb4 leftgreen&crumble&anybomb
+cbb leftgreen&anybomb&Esuper|green&super&anybomb
+
+#Upper Dark Green
+.def upperdarkgreen green&phazon&flight
+1416 metlock25
+153c upperdarkgreen&screw&space
+164d upperdarkgreen&speed&space
+1765 upperdarkgreen
+177a upperdarkgreen&speed
+18b5 metlock15
+1d07 upperdarkgreen
+
+#Lower Dark Green
+.def lowerdarkgreen upperdarkgreen&screw
+1597 lowerdarkgreen&space
+179d lowerdarkgreen&metlock15
+19fe lowerdarkgreen&speed
+1c12 lowerdarkgreen&anybomb
+1c3c lowerdarkgreen
+1d1c lowerdarkgreen
 
 
 

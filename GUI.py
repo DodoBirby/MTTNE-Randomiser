@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import filedialog as fd
-from Generator import Generator
+from RandomFill import randomise
 import Patcher
 root = Tk()
 root.title("MTTNE Randomiser")
@@ -16,7 +16,6 @@ class itemError(Error):
 class fileError(Error):
     pass
 
-gen = Generator()
 
 def selectFile(arg):
     filetypes = (('Data files', '*.dat'), ('All files', '*.*'))
@@ -47,7 +46,7 @@ def generateGame():
         eTanks = int(ETankEntry.get())
         if missiles + supers + powerBombs + magShields + eTanks > 114:
             raise itemError
-        itemDict = gen.generate_game(seed, missiles, supers, eTanks, powerBombs, magShields)
+        itemDict = randomise(seed, missiles, supers, powerBombs, magShields, eTanks)
         Patcher.patch(infile, outfile, itemDict)
         print("Done!")
     except ValueError:
