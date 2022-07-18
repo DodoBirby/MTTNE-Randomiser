@@ -1,0 +1,316 @@
+Items are ordered in column order, top to bottom, left to right.
+Order is only correct on a per planet basis not for the entire game world.
+Names for non-major items don't really make too much sense so don't worry about them.
+
+Asteroid
+13F - Leftmost missiles
+257 - Magnetic Shield
+25E - Missile
+38B - Morphball
+480 - Top missiles
+5BB - First Missiles 
+6B7 - Top E
+6CC - Bottom E
+7B3 - Cliff Missiles
+8CB - Power Bomb
+9FF - Intersection missiles
+A0D - Super missiles
+C3D - Above Long beam missiles
+C44 - Long Beam
+F7E - Wall Jump
+10C0 - Super Blast
+
+7 Missiles
+1 Super Missile
+2 E-Tanks
+1 Power Bomb
+4 Majors
+1 Mag Shield
+16 Items Total
+
+Aquadia -
+1199 - Leftside missiles
+11A7 - Leftside E
+12B1 - Power Grip
+12B8 - Keycard below grip
+12BF - Chozo Keycard
+12C6 - Aquadia Light PBs
+13C2 - Charge Beam
+150B - Poison Pool Supers
+15F2 - Pre-Charge missiles
+160E - Corridor Keycard
+1615 - Magnetic Tank Left
+1750 - Ice Beam
+1830 - Crumble Missile
+1837 - Big Room Missile
+183E - Tunnel Keycard
+1948 - Crumble E-Tank
+1A60 - Walljump Missile
+1B7F - Above Spring Keycard
+1B86 - Spring Ball
+1C82 - Drop Down Super
+1C97 - Hidden Missile
+1D9A - Top Dark Missile
+1DBD - Dark PBs
+1DC4 - Dark E
+1ECE - 9 room Bottom Keycard
+1EF1 - Dark Room Dig
+1FD8 - Top Right of 9 room Keycard
+20F0 - Top left of spider Keycard
+210C - Dark Bottom Missiles
+2113 - Below Bottom Missiles
+21FA - Top dark Mag shield
+220F - Spider Ball
+268B - Right side keycard
+
+8 Missiles
+11 Keycards
+3 E-Tanks
+2 Super Missiles
+2 Power Bombs
+2 Mag Shields
+5 Majors
+33 Items Total
+
+
+Steelaris
+2772 - Top Left Gear
+2780 - Triple Missile Top
+2787 - Triple Missile Middle
+278E - Triple Missile Bottom
+29B7 - Chozo Gear
+29BE - Spiky Super
+2CF8 - Hidden Power Bombs
+2CFF - U Gear
+2E17 - Block Missiles
+2F2F - Spazer
+3032 - Bombs
+304E - Long Speedboost Mag Shield
+314A - Roof Mag shield
+3158 - Corridor Missile
+315F - Pre-WallCrawl Gear
+3166 - Super Blast Super
+3262 - Varia Suit
+3381 - Corridor Gear
+35AA - Top Right Missile
+35B1 - Top Right PB
+35BF - Early Supers
+36D0 - Dark Missiles
+37E8 - Dark E-Tank
+
+7 Missiles
+5 Gears
+3 Majors
+2 Mag Shields
+2 Power Bomb
+3 Supers
+1 E-Tank
+23 Total Items
+
+Incendian
+33B9 - Dark Missiles
+35E2 - Dark Mag Shield
+3701 - Dark Super
+380B - High Jump
+3915 - Dark E
+3B22 - Top E
+3C3A - Top Missile
+3C79 - Chozo Charm
+3D6E - Secret Missile
+3E94 - Power Bombs
+3F97 - Tall room mag shield
+3FB3 - Plasma Beam
+41C7 - Corridor Missile
+450F - Entrance Supers
+4620 - Second Entrance Supers
+462E - More Power Bombs
+463C - Roof Missile
+4731 - Phazon Suit
+475B - Lava Missile
+4865 - Fire Beam
+4A9C - Right side Supers
+4AA3 - Right Side Missiles
+
+7 Missiles
+4 Supers
+2 Mag Shields
+2 E-Tanks
+2 Power Bombs
+5 Majors
+22 Total Items
+
+Greenymede
+624 - Post Wave Missiles
+73C - Wave Beam
+CB4 - Power Bombs
+CBB - Supers
+DB0 - Sky Power Bombs
+EF9 - Post Speed Missile
+FF5 - Big Room Missile
+1011 - Speed Booster
+1130 - Post Zeta Mag shield
+122C - Ceiling Super
+1344 - Hidden E
+1416 - Hyper Shield
+153C - Dark E
+1582 - Speedboost Power Bombs
+1597 - Dark Ceiling Super
+164D - Top Dark Mag shield
+1765 - Dark Super
+177A - Dark Missiles
+179D - Dark pre-screw Mag Shield
+17C0 - Speedboost Missile
+18B5 - Dark pre-screw Missile
+18C3 - Speedboost Missile
+18CA - Crumble Power Bombs
+19DB - Ledge Missiles
+19FE - Corridor Power Bombs
+1C12 - Wall Missile
+1C3C - Bottom E
+1D07 - Corridor Missile
+1D1C - Screw Attack
+1D38 - Hidden Super
+
+10 Missiles
+5 Supers
+5 Power Bombs
+3 E-Tanks
+3 Mag Shields
+4 Majors
+30 Total Items
+
+Gravitax
+3525 - Dark E
+3970 - Sky Supers
+3985 - Mag Shield
+3A9D - Missile
+3BB5 - Under Ship Super
+3BCA - Dark Speed Missile
+3CD4 - Light E
+3CDB - Post Save Power Bomb
+3DDE - Outside Missile
+3DF3 - Inside Missile
+4007 - Power Bomb
+4134 - Space Jump
+4483 - Right Side Missile
+
+2 E-Tanks
+5 Missiles
+2 Supers
+1 Mag Shield
+2 Power Bombs
+1 Major
+13 Total Items
+
+Kholdstar
+1E11 - Dark Power Bomb
+1E18 - Bomb Beam Adapter
+1F1B - Dark Roof Missile
+1F4C - Mag Shield
+1F6F - Super
+2079 - Missile
+224E - Top Super
+22BE - Speedboost E
+23B3 - Mag Shield
+24D9 - Speedboost Super
+24EE - Missile
+25EA - Corridor Power Bomb
+260D - Floor Missile
+2836 - Seeker Miss
+2924 - Fork Mag Shield
+2940 - Pre-Grav Missile
+2A4A - Corridor Missile
+2A5F - Gravity Suit
+
+6 Missiles
+3 Mag Shields
+3 Supers
+2 Power Bombs
+1 E-Tank
+3 Majors
+18 Total Items
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAPS CROSS OVER
+
+
+
