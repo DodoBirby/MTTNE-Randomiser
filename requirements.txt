@@ -38,6 +38,8 @@
 .def climb space|spider|morphbombs
 .def crumble space|spider
 .def flight space|morphbombs
+.def spikeledge space|wall&morph|high&grip|high&spider
+.def smallclimb space|spider|morphbombs|grip|high|wall&morph
 
 #Planets
 .def asteroid *
@@ -90,9 +92,9 @@ a0d lowerast&morph&crumble
 15f2 chargehole
 
 #Nokey, no reqs
-11a7 aqua&anybomb
-12b8 aqua
-12bf aqua
+11a7 aqua&anybomb&Esmallclimb
+12b8 aqua&Esmallclimb
+12bf aqua&Esmallclimb
 1c82 aqua&speed&chargehole
 
 #Middle Aquadia
@@ -128,7 +130,7 @@ a0d lowerast&morph&crumble
 210c darkaqua&Nb 23&speed
 2113 darkaqua&Nb 23&fire
 150b darkaqua&Nb 23&powbomb&Eclimb
-1750 darkaqua&fire&speed&Eice
+1750 darkaqua&Nb 23&fire&speed&Eice
 
 #Light Aquadia Key
 .def keyaqua aqua&Nb 23
@@ -144,7 +146,7 @@ a0d lowerast&morph&crumble
 2787 steel&super
 278e steel&powbomb&Eclimb&Esuper
 29b7 steel
-29be steel&super&climb|steel&super&high|steel&super&grip
+29be steel&super&smallclimb
 2cf8 steel&adaptor&climb
 2cff steel&climb
 2e17 steel&anybomb
@@ -220,11 +222,12 @@ a0d lowerast&morph&crumble
 #Dark Gravitax
 .def darkgravhell gravitax&Nb 1e|gravitax&phazon
 .def darkgravleft darkgravhell&climb
+.def darkgravleftspikes darkgravhell&spikeledge
 .def darkgravright darkgravhell&powbomb&speed
 3525 darkgravleft&flight
 3bca darkgravright&screw
-4134 darkgravleft&darkgravright&N8 20
-4483 darkgravleft&darkgravright&N8 20
+4134 darkgravleftspikes&darkgravright&N8 20
+4483 darkgravleftspikes&darkgravright&N8 20
 
 #Kholdstar
 .def khold astescape&N5 24&N8 1e&super&speed&fire&shield|astescape&N5 24&varia&super&speed&fire&shield
@@ -251,6 +254,7 @@ a0d lowerast&morph&crumble
 .def darkkholdhell khold&N8 1e|khold&phazon
 .def darkkhold darkkholdhell&adaptor&climb|darkkholdhell&wave&fire&climb
 1e11 darkkhold&adaptor
+1f1b darkkhold&anybomb
 1e18 darkkhold&Eadaptor
 224e darkkhold&flight&super
 
